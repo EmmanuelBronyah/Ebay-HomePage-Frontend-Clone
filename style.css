@@ -12,7 +12,7 @@ body {
 
 .container-grid {
   display: grid;
-  grid-template-rows: 0rem 2rem 0rem 4.5rem 0rem 2rem 0.6fr 0.5fr 0.7fr 1fr 1fr;
+  grid-template-rows: 0rem 2rem 0rem 4.5rem 0rem 2rem 0.6fr 0.5fr 0.7fr 0.9fr 1fr;
 }
 
 hr {
@@ -464,6 +464,7 @@ hr {
   display: grid;
   gap: 3.9rem;
   grid-template-columns: 250px 1fr;
+  grid-template-rows: 0.8fr;
   padding-inline-start: 3rem;
   padding-top: 1rem;
   margin-top: 4rem;
@@ -474,7 +475,7 @@ hr {
 
 .first-part {
   display: grid;
-  grid-template-rows: 25% 16% 20%;
+  grid-template-rows: repeat(3, 5rem);
   color: rgb(24, 24, 24);
 }
 
@@ -485,6 +486,7 @@ hr {
 
 .first-part p:nth-last-child(2) {
   font-size: 1.063rem;
+  align-self: center;
 }
 
 .first-part button {
@@ -499,9 +501,16 @@ hr {
   }
 }
 
-.seventh-level > img {
-  max-width: 100%;
+.second-part-image {
+  width: 100%;
   height: 100%;
+  justify-self: center;
+  align-self: center;
+
+  img {
+    max-width: 100%;
+    height: 100%;
+  }
 }
 
 /* END OF SEVENTH LEVEL */
@@ -672,6 +681,28 @@ footer li {
   .sixth-level-grid{
     grid-template-columns: repeat(15, 20%);
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .seventh-level {
+    gap: 0;
+    grid-template-rows: 0.3fr 1fr;
+  }
+
+  .first-part {
+    grid-template-rows: repeat(3, 3rem);
+    grid-row: 1;
+    grid-column: span 2;
+
+    button {
+      width: 15rem;
+      height: 2.5rem;
+    }
+  }
+
+  .second-part-image {
+    grid-column: span 2;
   }
 }
 
