@@ -1,1 +1,1 @@
-# Cloned Ebay HomePage (Frontend Only)
+# Ebay HomePage Clone(Frontend Only)
