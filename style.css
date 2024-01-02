@@ -480,8 +480,9 @@ hr {
 }
 
 .first-part p:first-of-type {
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem, 2.5vw + 0.7rem, 2.25rem);
   font-weight: 700;
+  align-self: center;
 }
 
 .first-part p:nth-last-child(2) {
@@ -495,6 +496,7 @@ hr {
   height: 58%;
   background-color: transparent;
   border: 1px solid rgb(24, 24, 24);
+  align-self: center;
 
   i {
     padding-left: 0.3rem;
@@ -517,6 +519,7 @@ hr {
 
 footer {
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr) 50px;
   padding-inline: 3rem;
@@ -591,8 +594,29 @@ footer li {
   gap: 0.6rem;
   align-items: center;
   justify-content: center;
-  width: 60%;
-  border: 1px solid black;
+  width: 9.4rem;
+  height: 2rem;
+  border: 1px solid rgb(229, 229, 229);
+  background-color: rgb(245, 245, 245);
+
+  a {
+    text-decoration: none;
+    color: rgb(118, 118, 118);
+  }
+}
+
+.shortcut-links {
+  display: none;
+}
+
+.shortcut-links ul{
+  display: flex;
+  gap: 1.5rem;
+
+  li a {
+    text-decoration: none;
+    color: rgb(118, 118, 118);
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -641,8 +665,41 @@ footer li {
 }
 
 @media screen and (max-width: 1020px) {
+  .container-grid {
+    display: grid;
+    grid-template-rows: 0rem 2rem 0rem 4.5rem 0rem 2rem 0.6fr 0.5fr 0.7fr 0.9fr 0.5fr;
+  }
+
   .ship-to a:last-child {
     display: none;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .buy,
+  .sells,
+  .tools-and-apps,
+  .stay-connected,
+  .about-ebay,
+  .help-and-contact,
+  .community,
+  .ebay-sites {
+    display: none;
+  }
+
+  .shortcut-links {
+    display: block;
+    width: 100%;
+
+    ul {
+      row-gap: 0.5rem;
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -710,7 +767,7 @@ footer li {
   .fourth-level {
     display: grid;
     grid-template-columns: repeat(3, 0.5fr) !important;
-    grid-template-rows: 10rem 40% !important;
+    grid-template-rows: 10rem 38% !important;
     height: 90% !important;
   }
   
