@@ -390,10 +390,9 @@ hr {
 .third-level-dropdown {
   display: grid;
   position: absolute;
-  gap: 1rem;
   grid-template-columns: repeat(2, 1fr) 4fr;
   width: 100vw;
-  height: 53vh;
+  height: 56vh;
   padding-inline: 1vw;
   background-color: white;
   inset: 2rem auto auto auto;
@@ -991,6 +990,10 @@ footer {
 }
 
 @media screen and (max-width: 800px){
+  .third-level-dropdown {
+    display: none;
+  }
+  
   .fourth-level {
     display: grid;
     grid-template-columns: repeat(3, 0.5fr) !important;
