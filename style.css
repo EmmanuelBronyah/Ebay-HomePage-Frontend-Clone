@@ -40,6 +40,11 @@ hr {
   }
 }
 
+.left-section ul li:nth-child(2) a:hover,
+.left-section ul li:nth-child(3) a:hover{
+  text-decoration: underline;
+}
+
 .left-section ul li a,
 .right-section ul li a {
   text-decoration: none;
@@ -56,6 +61,10 @@ hr {
     li a {
       color: rgb(51, 51, 51);
     }
+
+    li:nth-child(2):hover {
+      text-decoration: underline;
+    }
   }
   
   ul > * {
@@ -65,6 +74,10 @@ hr {
 
 .ship-to > * {
   vertical-align: top;
+}
+
+.ship-to a:hover {
+  color: rgb(51, 51, 255);
 }
 
 .ship-to > a img {
@@ -269,9 +282,14 @@ hr {
   width: 5rem;
   margin-right: 0.5rem;
 
-  > p {
+  > a {
     text-align: center;
+    text-decoration: none;
     color: rgb(85, 85, 85);
+  }
+
+  > a:hover {
+    color: rgb(51, 51, 255);
   }
 
   i {
@@ -332,6 +350,7 @@ hr {
     border: none;
     padding-block: 0.656em;
     border-radius: none;
+    cursor: pointer;
   }
 }
 
@@ -361,6 +380,10 @@ hr {
     font-size: 0.688rem;
     text-decoration: none;
     color: rgb(85, 85, 85);
+  }
+
+  a:hover {
+    color: rgb(51, 51, 255);
   }
 }
 
@@ -434,7 +457,28 @@ hr {
 }
 
 .more {
+  position: relative;
   display: none;
+
+  .link-list {
+    display: none;
+    position: absolute;
+    padding-block: 1rem;
+    padding-inline: 1rem 4rem;
+    inset: 1.9rem 0rem auto auto;
+    background-color: white;
+
+    ul li {
+      list-style: none;
+      line-height: 2.5;
+    }
+  }
+}
+
+.more:hover {
+  .link-list {
+    display: block;
+  }
 }
 
 /* END OF THIRD LEVEL */
@@ -486,6 +530,13 @@ hr {
   border: 1px solid #592e13;
   background-color: #fbcd25;
   color: rgb(89, 46, 19);
+  transition: background-color 150ms ease-in-out;
+}
+
+.button-collectible:hover {
+  background-color: #592e13;
+  color: #fbcd25;
+  cursor: pointer;
 }
 
 .section-2,
@@ -680,10 +731,17 @@ hr {
     background-color: transparent;
     border: 1px solid rgb(24, 24, 24);
     align-self: center;
+    transition: background-color 150ms ease-in-out;
 
     i {
       padding-left: 0.3rem;
     }
+  }
+
+  button:hover {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    cursor: pointer;
   }
 }
 
@@ -713,6 +771,15 @@ footer {
 
   li {
     list-style: none;
+  }
+
+  div li a {
+    color: rgb(118, 118, 118);
+    text-decoration: none;
+  }
+
+  div li a:hover {
+    text-decoration: underline;
   }
 }
 
@@ -839,12 +906,23 @@ footer {
       font-size: 1.5rem;
       color: rgb(85, 85, 85);
     }
+
+    .sports-dropdown-link,
+    .health-dropdown-link,
+    .industrial-dropdown-link,
+    .home-dropdown-link {
+      display: none;
+    }
   }
 }
 
 @media screen and (max-width: 1060px) {
   .garden {
     display: none;
+  }
+
+  .home-dropdown-link {
+    display: block !important;
   }
 }
 
@@ -980,12 +1058,20 @@ footer {
       max-width: 80%;
       height: 100%;
     }
-  }  
+  }
+
+  .industrial-dropdown-link {
+    display: block !important;
+  }
 }
 
 @media screen and (max-width: 819px) {
   .health {
     display: none;
+  }
+
+  .health-dropdown-link {
+    display: block !important;
   }
 }
 
@@ -1132,6 +1218,10 @@ footer {
   .left-section ul li:nth-of-type(2),
   .left-section ul li:nth-of-type(3) {
     display: none;
+  }
+
+  .sports-dropdown-link {
+    display: block !important;
   }
 }
 

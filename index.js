@@ -71,6 +71,7 @@ document.addEventListener("mouseover", (e) => {
     image.src = imageUrl;
 
     thirdLevelDropdown.style.opacity = "1";
+    thirdLevelDropdown.style.pointerEvents = "auto";
   }
 
   if (e.target.matches(".electronics a")) {
@@ -140,11 +141,13 @@ document.addEventListener("mouseover", (e) => {
   // Remove Third Level Dropdown when the mouse cursor enters the second level
   if (e.target === secondLevel) {
     thirdLevelDropdown.style.opacity = "0";
+    thirdLevelDropdown.style.pointerEvents = "none";
   }
 });
 
 document.addEventListener("mouseout", (e) => {
   if (e.target === fourthLevel) {
     thirdLevelDropdown.style.opacity = "0";
+    thirdLevelDropdown.style.pointerEvents = "none";
   }
 });
